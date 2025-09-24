@@ -1,0 +1,5 @@
+@GetMapping -> Puxar informaçoes : Passar ("NomeDaRota")
+@PostMapping -> Mandar informaçoes
+@PutMapping -> Alterar informaçoes
+@PatchMapping -> Alterar informaçoes
+@DeleteMapping -> Deletar informaçoes
