@@ -3,3 +3,9 @@
 @PutMapping -> Alterar informaçoes
 @PatchMapping -> Alterar informaçoes
 @DeleteMapping -> Deletar informaçoes
+
+
+Para criar um modelo de classe é sempr necessario um ID, usar long para questao de escabilidade
+Nao é preciso declarar ID no construtor pois nao vai ser usado diretamente.
+
+Spring JPA = uma dependencia para trabalhar com persistencia de dados, utilizado para mexer com banco de dados.
