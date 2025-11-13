@@ -3,21 +3,15 @@ package dev.java10x.cadastroNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninja")
 public class NinjaController {
-
-    @GetMapping("/boasvindas")
-    public String boasVindas(){
-        return "Essa é minha primeria mensagem nessa rota";
-    }
-
 
     // CRUDE
     // Criar novo ninja (CREATE)
 
-    @PostMapping("/criar")
+    @PostMapping("/adicionar")
     public String criarNinja(){
-        return "Ninja criado";
+        return "Ninja adicionado";
     }
 
     // Mostrar todos os ninjas (READ)

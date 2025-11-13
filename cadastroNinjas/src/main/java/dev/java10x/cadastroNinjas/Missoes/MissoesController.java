@@ -27,12 +27,6 @@ public class MissoesController {
         return "Missao por ID";
     }
 
-    // Bucar Missoes por Rank
-    @GetMapping("/rank")
-    public String VerMissoesRank(){
-        return "Todas Missoes exibidas";
-    }
-
     // Alterar missoes (UPDATE)
     @PutMapping("/alterar")
     public String AlterarMissao(){
