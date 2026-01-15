@@ -17,7 +17,7 @@ public class NinjaController {
     //TODO: Adicionar metodos na camada service:
     // /adicionar
     // /mostar -X
-    // /mostrar por id
+    // /mostrar por id - X
     // /alterar
     // /deletar
 
@@ -25,8 +25,8 @@ public class NinjaController {
     // Criar novo ninja (CREATE)
 
     @PostMapping("/adicionar")
-    public String criarNinja(){
-        return "Ninja adicionado";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.adicionarNinja(ninja);
     }
 
     // Mostrar todos os ninjas (READ)
