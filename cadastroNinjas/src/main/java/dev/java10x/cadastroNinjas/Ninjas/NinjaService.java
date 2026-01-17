@@ -1,5 +1,6 @@
 package dev.java10x.cadastroNinjas.Ninjas;
 
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,5 +35,14 @@ public class NinjaService {
     //Deletar Ninja - Tem que ser um metodo void
     public void deletarNinja (Long id){
         ninjaRepository.deleteById(id);
+    }
+
+    //Alterar dados Ninja
+    public NinjaModel alterarNinja (Long id, NinjaModel ninjaAtualizado){
+        if (ninjaRepository.existsById(id)){
+            ninjaAtualizado.setId(id);
+            return ninjaRepository.save(ninjaAtualizado);
+        }
+        else return null;
     }
 }

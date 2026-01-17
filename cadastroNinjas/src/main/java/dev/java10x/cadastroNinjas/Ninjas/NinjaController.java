@@ -15,11 +15,7 @@ public class NinjaController {
     }
 
     //TODO: Adicionar metodos na camada service:
-    // /adicionar
-    // /mostar -X
-    // /mostrar por id - X
     // /alterar
-    // /deletar
 
     // CRUDE
     // Criar novo ninja (CREATE)
@@ -45,9 +41,9 @@ public class NinjaController {
 
 
     // Alterar dados do Ninjas (UPDATE)
-    @PutMapping("/alterar")
-    public String alterarNinja(){
-        return "Ninja alterado";
+    @PutMapping("/alterar/{id}")
+    public NinjaModel alterarNinja(@PathVariable Long id, @RequestBody NinjaModel ninjaModelAtt){
+        return ninjaService.alterarNinja( id, ninjaModelAtt);
     }
 
     // Deletar Ninjas (DELETE)
