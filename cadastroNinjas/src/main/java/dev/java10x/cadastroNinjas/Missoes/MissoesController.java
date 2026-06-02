@@ -36,9 +36,9 @@ public class MissoesController {
     }
 
     // Alterar missoes (UPDATE)
-    @PutMapping("/alterar")
-    public String AlterarMissao(){
-        return "Missao alterada";
+    @PutMapping("/alterar/{id}")
+    public MissoesModel AlterarMissao(@PathVariable Long id, @RequestBody MissoesModel missaoAlterada){
+        return missoesService.AlterarMissao(id, missaoAlterada);
     }
 
     // Deletar Missoes(DELETE)

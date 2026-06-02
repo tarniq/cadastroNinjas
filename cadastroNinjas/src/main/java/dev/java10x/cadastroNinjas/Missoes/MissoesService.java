@@ -1,5 +1,5 @@
 package dev.java10x.cadastroNinjas.Missoes;
-
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,8 +32,12 @@ public class MissoesService{
     }
 
     // Alterar missoes (UPDATE)
-    public String AlterarMissao(){
-        return "Missao alterada";
+    public MissoesModel AlterarMissao(Long id, MissoesModel missaoAlterada){
+        if (missoesRepository.existsById(id)) {
+            missaoAlterada.setID(id);
+            return missoesRepository.save(missaoAlterada);
+        }
+        else return null;
     }
 
     // Deletar Missoes(DELETE)
