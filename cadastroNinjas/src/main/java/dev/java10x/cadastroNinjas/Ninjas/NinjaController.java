@@ -14,14 +14,9 @@ public class NinjaController {
         this.ninjaService = ninjaService;
     }
 
-    //TODO: Adicionar metodos na camada service:
-    // /alterar
-
-    // CRUDE
-    // Criar novo ninja (CREATE)
 
     @PostMapping("/adicionar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja){
         return ninjaService.adicionarNinja(ninja);
     }
 

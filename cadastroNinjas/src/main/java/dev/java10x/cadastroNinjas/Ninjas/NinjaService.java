@@ -11,9 +11,11 @@ public class NinjaService {
 
     //Injeçao de dependencia
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     // Listar ninjas
@@ -28,8 +30,10 @@ public class NinjaService {
     }
 
     //Adicionar Ninja
-    public NinjaModel adicionarNinja (NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    public NinjaDTO adicionarNinja (NinjaDTO ninjaDTO){
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     //Deletar Ninja - Tem que ser um metodo void
@@ -39,7 +43,7 @@ public class NinjaService {
 
     //Alterar dados Ninja
     public NinjaModel alterarNinja (Long id, NinjaModel ninjaAtualizado){
-        if (ninjaRepository.existsById(id)){
+        if (ninjaRepository.existsById(id)) {
             ninjaAtualizado.setId(id);
             return ninjaRepository.save(ninjaAtualizado);
         }
