@@ -22,23 +22,17 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     private String nome;
     private int idade;
 
     @Column(unique = true)
     private String email;
+    private String vila;
 
     // Um ninja tem uma unica missao
     @ManyToOne
     @JoinColumn(name = "missoes_ID") //chave estrangeira - foreing key
     private MissoesModel missoes;
+
 
 }
