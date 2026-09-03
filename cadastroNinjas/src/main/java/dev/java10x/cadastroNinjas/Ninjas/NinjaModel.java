@@ -36,12 +36,4 @@ public class NinjaModel {
     @JsonIgnore
     private MissoesModel missoes;
 
-
-    /*public NinjaModel(Long id, String nome, int idade, String email, String vila) {
-        this.id = id;
-        this.nome = nome;
-        this.idade = idade;
-        this.email = email;
-        this.vila = vila;
-    }*/
 }

@@ -15,6 +15,6 @@ public class MissoesDTO {
     private String nome;
     private double credito;
     private Rank rank;
-    private List<NinjaDTO> ninjas;
+    private List<NinjaModel> ninjas;
 
 }
