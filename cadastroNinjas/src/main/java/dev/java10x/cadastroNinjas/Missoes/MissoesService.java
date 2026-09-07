@@ -1,5 +1,5 @@
 package dev.java10x.cadastroNinjas.Missoes;
-
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
