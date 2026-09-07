@@ -36,8 +36,8 @@ public class MissoesController {
     }
 
     // Alterar missoes (UPDATE)
-    @PutMapping("/alterar")
-    public MissoesDTO AlterarMissao(Long id, MissoesDTO missoesDTO){
+    @PutMapping("/alterar/{id}")
+    public MissoesDTO AlterarMissao(@PathVariable Long id, @RequestBody MissoesDTO missoesDTO){
         return missoesService.alterarMissao(id,missoesDTO);
     }
 
