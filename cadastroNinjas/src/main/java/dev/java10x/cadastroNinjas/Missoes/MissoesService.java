@@ -52,8 +52,12 @@ public class MissoesService{
     }
 
     // Deletar Missoes(DELETE)
-    public void deletarMissoes(Long id){
-        missoesRepository.deleteById(id);
+    public Long deletarMissoes(Long id){
+        if (missoesRepository.existsById(id)) {
+            missoesRepository.deleteById(id);
+            return id;
+        }
+        return null;
     }
 }
 

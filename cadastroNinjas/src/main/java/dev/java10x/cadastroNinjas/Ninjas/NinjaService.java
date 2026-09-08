@@ -41,8 +41,12 @@ public class NinjaService {
     }
 
     //Deletar Ninja - Tem que ser um metodo void
-    public void deletarNinja (Long id){
-        ninjaRepository.deleteById(id);
+    public Long deletarNinja (Long id){
+        if (ninjaRepository.existsById(id)) {
+            ninjaRepository.deleteById(id);
+            return id;
+        }
+        return null;
     }
 
     //Alterar dados Ninja

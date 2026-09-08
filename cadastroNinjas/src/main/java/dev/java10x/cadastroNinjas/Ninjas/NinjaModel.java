@@ -35,5 +35,4 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_ID") //chave estrangeira - foreing key
     @JsonIgnore
     private MissoesModel missoes;
-
 }
